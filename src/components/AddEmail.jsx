@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Heropage = () => {
+const AddEmail = () => {
     return (
         <div  className='container-xxl container-sm w-50'>
             <p class="d-inline-flex gap-1">
@@ -24,4 +24,4 @@ const Heropage = () => {
     )
 }
 
-export default Heropage
+export default AddEmail
