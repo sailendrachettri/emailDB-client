@@ -12,6 +12,7 @@ const Display = () => {
                         <th scope="col">Email 1</th>
                         <th scope="col">Email 2</th>
                         <th scope="col">Email 3</th>
+                        <th scope="col">Carrer page</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,6 +20,7 @@ const Display = () => {
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
+                        <td>@mdo</td>
                         <td>@mdo</td>
                         <td>@mdo</td>
                         <td>@mdo</td>
@@ -30,10 +32,12 @@ const Display = () => {
                         <td>@fat</td>
                         <td>@fat</td>
                         <td>@fat</td>
+                        <td>@fat</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
                         <td>Larry the Bird</td>
+                        <td>@twitter</td>
                         <td>@twitter</td>
                         <td>@twitter</td>
                         <td>@twitter</td>
