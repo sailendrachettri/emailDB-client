@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { SERVER_URI } from './config'
+import { SERVER_URI } from '../config'
 
 
 const Display = () => {
