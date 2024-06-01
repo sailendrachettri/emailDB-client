@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { SERVER_URI } from './config'
+
 
 const Display = () => {
+    const [emails, setEmails] = useState([]);
+
+    useEffect(() => {
+
+        (async () => {
+            try {
+                const response = await fetch(`${SERVER_URI}/api/post/email/fetch`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    setEmails(data.emails);
+
+                } else {
+                    console.log("Not able to fetch emails");
+                }
+            } catch (error) {
+                console.log(error.message)
+            }
+        })();
+    }, [])
+
+
     return (
-        <>
-            <table class="table table-striped table-hoverble">
+        <div className='overflow-auto'>
+            <table className="table table-striped table-hoverble">
                 <thead>
                     <tr>
                         <th scope="col">S.No</th>
@@ -16,36 +40,23 @@ const Display = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                    </tr>
+
+                    {
+                        emails.map((data, index) => (
+                            <tr key={index}>
+                                <th scope="row">{index + 1}</th>
+                                <td>{(data.companyName) ? (data.companyName) : "-"}</td>
+                                <td>{(data.companyType) ? (data.companyType) : "-"}</td>
+                                <td>{(data.firstEmail) ? (data.firstEmail) : "-"}</td>
+                                <td>{(data.secondEmail) ? (data.secondEmail) : "-"}</td>
+                                <td>{(data.thirdEmail) ? (data.thirdEmail) : "-"}</td>
+                                <td>{(data.carrerPage) ? (data.carrerPage) : "-"}</td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
-        </>
+        </div>
     )
 }
 
