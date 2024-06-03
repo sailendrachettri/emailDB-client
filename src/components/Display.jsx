@@ -45,12 +45,12 @@ const Display = () => {
                         emails.map((data, index) => (
                             <tr key={index}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{(data.companyName) ? (data.companyName) : "-"}</td>
-                                <td>{(data.companyType) ? (data.companyType) : "-"}</td>
-                                <td>{(data.firstEmail) ? (data.firstEmail) : "-"}</td>
-                                <td>{(data.secondEmail) ? (data.secondEmail) : "-"}</td>
-                                <td>{(data.thirdEmail) ? (data.thirdEmail) : "-"}</td>
-                                <td>{(data.carrerPage) ? (data.carrerPage) : "-"}</td>
+                                <td>{(data.companyName) ? (data.companyName) : ""}</td>
+                                <td>{(data.companyType) ? (data.companyType) : ""}</td>
+                                <td>{(data.firstEmail) ? (data.firstEmail) : ""}</td>
+                                <td>{(data.secondEmail) ? (data.secondEmail) : ""}</td>
+                                <td>{(data.thirdEmail) ? (data.thirdEmail) : ""}</td>
+                                <td>{(data.carrerPage) ? (data.carrerPage) : ""}</td>
                             </tr>
                         ))
                     }
