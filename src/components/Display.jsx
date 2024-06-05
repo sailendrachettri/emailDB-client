@@ -50,7 +50,7 @@ const Display = () => {
                                 <td>{(data.firstEmail) ? (data.firstEmail) : ""}</td>
                                 <td>{(data.secondEmail) ? (data.secondEmail) : ""}</td>
                                 <td>{(data.thirdEmail) ? (data.thirdEmail) : ""}</td>
-                                <td>{(data.carrerPage) ? (data.carrerPage) : ""}</td>
+                                <td>{(data.carrerPage) ? (data.careerPage) : ""}</td>
                             </tr>
                         ))
                     }
