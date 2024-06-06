@@ -5,8 +5,8 @@ import IntroPage from './IntroPage'
 const Homepage = () => {
   return (
     <div className='container my-4'>
-        <Display />
         <IntroPage />
+        <Display />
     </div>
   )
 }
