@@ -25,6 +25,10 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <form className="d-flex align-items-center">
+                            <span>
+                                <Link className="nav-link me-2 hover-btn" to="/adminlogin">Admin</Link>
+                            </span>
+
                             <span className='d-flex'>
                                 <Link className="nav-link" to={linkToThisProject}>Github</Link>
                                 <i className="bi bi-github ps-2"></i>

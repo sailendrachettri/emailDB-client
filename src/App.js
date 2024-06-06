@@ -6,6 +6,8 @@ import Homepage from './components/Homepage';
 import AddEmail from './components/AddEmail'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import AdminLogin from './components/AdminLogin';
+import PageNotFound from './components/utils/PageNotFound';
 
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
     <Navbar />
     <Routes>
       <Route path="/" element={<Homepage />} />
+      <Route path="*" element={<PageNotFound />} />
       <Route path="/addemail" element={<AddEmail />} />
+      <Route path="/adminlogin" element={<AdminLogin />} />
     </Routes>
     <Footer />
     </>

@@ -24,3 +24,11 @@ table{
 h1, h2, h3, h4, h5, h5{
   font-family: var(--heading-font);
 }
+
+.hover-btn{
+  transition: all 0.4s ease-in-out;
+}
+
+.hover-btn:hover{
+  font-weight: bold;
+}
