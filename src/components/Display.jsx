@@ -31,7 +31,7 @@ const Display = () => {
         <div className='overflow-auto'>
             <table className="table table-striped table-hoverble">
                 <thead>
-                    <tr className='text-center'>
+                    <tr>
                         <th scope="col">S.No</th>
                         <th scope="col">Company</th>
                         <th scope="col">Type</th>
@@ -50,9 +50,9 @@ const Display = () => {
                                 <th scope="row">{index + 1}</th>
                                 <td>{(data.companyName) ? (data.companyName) : "none"}</td>
                                 <td>{(data.companyType) ? (data.companyType) : "none"}</td>
-                                <td>{(data.firstEmail) ? (data.firstEmail) : "none"}</td>
-                                <td>{(data.secondEmail) ? (data.secondEmail) : "none"}</td>
-                                <td>{(data.thirdEmail) ? (data.thirdEmail) : "none"}</td>
+                                <td>{(data.firstEmail) ? <Link to={`mailto:${data.firstEmail}`} target='_blank'>Email 1</Link> : "none"}</td>
+                                <td>{(data.secondEmail) ? <Link to={`mailto:${data.secondEmail}`} target='_blank'>Email 2</Link> : "none"}</td>
+                                <td>{(data.thirdEmail) ? <Link to={`mailto:${data.thirdEmail}`} target='_blank'>Email 3</Link> : "none"}</td>
                                 <td>{(data.careerPage) ? <Link to={data.careerPage} target='_blank'>Visit</Link> : "none"}</td>
                             </tr>
                         ))
