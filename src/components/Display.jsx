@@ -14,6 +14,7 @@ const Display = () => {
 
                 if (response.ok) {
                     setEmails(data.emails);
+                    console.log(data.emails);
 
                 } else {
                     console.log("Not able to fetch emails");
@@ -29,28 +30,29 @@ const Display = () => {
         <div className='overflow-auto'>
             <table className="table table-striped table-hoverble">
                 <thead>
-                    <tr>
+                    <tr className='text-center'>
                         <th scope="col">S.No</th>
                         <th scope="col">Company</th>
                         <th scope="col">Type</th>
                         <th scope="col">Email 1</th>
                         <th scope="col">Email 2</th>
                         <th scope="col">Email 3</th>
-                        <th scope="col">Carrer page</th>
+                        <th scope="col">Career</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {
                         emails.map((data, index) => (
+                            
                             <tr key={index}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{(data.companyName) ? (data.companyName) : ""}</td>
-                                <td>{(data.companyType) ? (data.companyType) : ""}</td>
-                                <td>{(data.firstEmail) ? (data.firstEmail) : ""}</td>
-                                <td>{(data.secondEmail) ? (data.secondEmail) : ""}</td>
-                                <td>{(data.thirdEmail) ? (data.thirdEmail) : ""}</td>
-                                <td>{(data.carrerPage) ? (data.careerPage) : ""}</td>
+                                <td>{(data.companyName) ? (data.companyName) : "none"}</td>
+                                <td>{(data.companyType) ? (data.companyType) : "none"}</td>
+                                <td>{(data.firstEmail) ? (data.firstEmail) : "none"}</td>
+                                <td>{(data.secondEmail) ? (data.secondEmail) : "none"}</td>
+                                <td>{(data.thirdEmail) ? (data.thirdEmail) : "none"}</td>
+                                <td>{(data.careerPage) ? (data.careerPage) : "none"}</td>
                             </tr>
                         ))
                     }

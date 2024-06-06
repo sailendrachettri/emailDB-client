@@ -9,6 +9,7 @@ const AddEmail = () => {
     const [secondEmail, setSecondEmail] = useState("");
     const [thirdEmail, setThirdEmail] = useState("");
     const [careerPage, setCareerPage] = useState("");
+    const [lodingInfo, setLoadingInfo] = useState("Add Email");
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -33,16 +34,25 @@ const AddEmail = () => {
             });
 
             const result = await response.json();
-            console.log("result: ", result);
     
             if(result.success){
                 toast.success("Record added successfully!");
+                setLoadingInfo("Add Email");
+                setCompanyName("");
+                setCompanyType("");
+                setFirstEmail("");
+                setSecondEmail("");
+                setThirdEmail("");
+                setCareerPage("");
+                
             }else{
                 toast.error(result.message);
+                setLoadingInfo("Add Email");
             }
             
         } catch (error) {
             toast.error(error.message);
+            setLoadingInfo("Add Email");
         }
     }
 
@@ -56,9 +66,9 @@ const AddEmail = () => {
                 <div className="mb-3">
                     <select className="form-select" value={companyType} onChange={ev => {setCompanyType(ev.target.value)}} aria-label="Default select example" required>
                         <option value="">Select Company Type</option>
-                        <option value="Large Company">Large Company</option>
-                        <option value="Medium Company">Medium Company</option>
-                        <option value="Growgin Startup">Growing Startup</option>
+                        <option value="Large">Large Company</option>
+                        <option value="Medium">Medium Company</option>
+                        <option value="Startup">Growing Startup</option>
                         <option value="Others">Others</option>
                     </select>
                 </div>
@@ -75,11 +85,11 @@ const AddEmail = () => {
                     <input type="email" value={thirdEmail} onChange={ev => {setThirdEmail(ev.target.value)}} className="form-control my-2" id="email3" placeholder="three@mail.com" />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="" className="form-label">Carrer page</label>
+                    <label htmlFor="" className="form-label">Carrer</label>
                     <input type="text" className="form-control my-2" value={careerPage} onChange={ev => {setCareerPage(ev.target.value)}} placeholder="carrer.example.com" />
                 </div>
 
-                <button className='btn btn-primary' type='submit'>Add email</button>
+                <button className='btn btn-primary' type='submit' onClick={()=> {setLoadingInfo("Please Wait...")}}>{lodingInfo}</button>
             </form>
         </div>
     )
