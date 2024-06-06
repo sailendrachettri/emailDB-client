@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { SERVER_URI } from '../config'
+import {Link} from 'react-router-dom'
 
 
 const Display = () => {
@@ -52,7 +53,7 @@ const Display = () => {
                                 <td>{(data.firstEmail) ? (data.firstEmail) : "none"}</td>
                                 <td>{(data.secondEmail) ? (data.secondEmail) : "none"}</td>
                                 <td>{(data.thirdEmail) ? (data.thirdEmail) : "none"}</td>
-                                <td>{(data.careerPage) ? (data.careerPage) : "none"}</td>
+                                <td>{(data.careerPage) ? <Link to={data.careerPage} target='_blank'>Visit</Link> : "none"}</td>
                             </tr>
                         ))
                     }
