@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { SERVER_URI } from '../config'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import LoadingDisplay from './utils/LoadingDisplay';
 
 
 const Display = () => {
     const [emails, setEmails] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
 
@@ -16,16 +18,23 @@ const Display = () => {
                 if (response.ok) {
                     setEmails(data.emails);
                     console.log(data.emails);
+                    setLoading(false);
+
 
                 } else {
                     console.log("Not able to fetch emails");
+                    setLoading(false);
                 }
             } catch (error) {
-                console.log(error.message)
+                console.log(error.message);
+                setLoading(false);
             }
         })();
     }, [])
 
+    if(loading){
+        return <LoadingDisplay />
+    }
 
     return (
         <div className='overflow-auto'>
@@ -45,7 +54,6 @@ const Display = () => {
 
                     {
                         emails.map((data, index) => (
-                            
                             <tr key={index}>
                                 <th scope="row">{index + 1}</th>
                                 <td>{(data.companyName) ? (data.companyName) : "none"}</td>

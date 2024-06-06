@@ -1,6 +1,7 @@
 import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'react-loading-skeleton/dist/skeleton.css'
 import Homepage from './components/Homepage';
 import AddEmail from './components/AddEmail'
 import Navbar from './components/Navbar';
