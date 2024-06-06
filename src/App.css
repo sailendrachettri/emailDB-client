@@ -9,10 +9,12 @@
 :root{
   --heading-font: "Exo 2", sans-serif;
   --para-font:  "Exo 2", sans-serif;
+  --bg-color: whitesmoke;
 }
 
 body{
   font-family: var(--para-font);
+  background-color: var(--bg-color);
 }
 
 table{
