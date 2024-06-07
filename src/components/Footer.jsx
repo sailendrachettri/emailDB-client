@@ -8,7 +8,7 @@ const Footer = () => {
         <>
             <div className='d-flex justify-content-center text-center mt-5'>
                 <div className='d-flex justify-content-center flex-column text-muted'>
-                    <p><Link to={reportBug} className='text-decoration-none text-muted fw-bold'>Report a Bug <i class="bi bi-bug-fill ps-1"></i></Link></p>
+                    <p><Link to={reportBug} className='text-decoration-none text-muted fw-bold'>Report a Bug <i className="bi bi-bug-fill ps-1"></i></Link></p>
                     <p>Developed by <Link to={portfolioLink} className='text-decoration-none text-muted fw-bold'>Sailendra </Link>Chettri </p>
                 </div>
             </div>
