@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import { SERVER_URI } from '../config';
 import { UserContext } from '../UserContext';
+import PageLoadingAnimation from './utils/PageLoadingAnimation';
+
 
 const AdminLogin = () => {
   // VARIABLES
@@ -13,6 +15,7 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState("Login");
   const { setUserInfo } = useContext(UserContext);
+  const [pageLoading, setPageLoading] = useState(true);
 
   // METHODS
   const handleLogin = async (e) => {
@@ -27,11 +30,11 @@ const AdminLogin = () => {
         credentials: 'include',
       });
 
-      if(response.ok){
+      if (response.ok) {
         const data = await response.json();
         setUserInfo(data);
-        navigate("/");
         toast.success(data.message);
+        navigate("/");
       }
 
     } catch (error) {
@@ -41,10 +44,18 @@ const AdminLogin = () => {
 
   }
 
-  const handleLoading = (e) => {
+  const handleLoading = () => {
     if (username && password) {
       setLoading("Please wait...");
     }
+  }
+
+  setTimeout(() => {
+    setPageLoading(false);
+  }, 1500);
+
+  if (pageLoading) {
+    return <PageLoadingAnimation />
   }
 
   return (

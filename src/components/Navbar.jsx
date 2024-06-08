@@ -74,6 +74,7 @@ const Navbar = () => {
                                 userInfo?.username && <span className='d-flex justify-content-center align-items-center'>
                                     <span>Welcome, <span className='fw-bold'> {userInfo?.username? userInfo?.username : "Guest"}</span></span>
                                     <Link className="nav-link me-2 hover-btn ps-2" to="/logout" onClick={handleLogout}>Logout</Link>
+                                    <Link className='nav-link me-2' to="/addemail">Add Records</Link>
                                 </span>
                             }
 

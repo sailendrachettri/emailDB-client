@@ -18,7 +18,7 @@ const Display = () => {
                 if (response.ok) {
                     setEmails(data.emails);
                     setLoading(false);
-                    
+
                 } else {
                     console.log("Not able to fetch emails");
                     setLoading(false);
@@ -30,7 +30,7 @@ const Display = () => {
         })();
     }, [])
 
-    if(loading){
+    if (loading) {
         return <LoadingDisplay />
     }
 
