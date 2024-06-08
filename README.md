@@ -1,7 +1,8 @@
 
-# CODEBINDS BLOG
+# emailDB
+Accelerate your job hunt with our curated list of professional emails and direct links to company career pages. Find your dream job faster with our streamlined resources.
 
-## Tech Stack
+## Technology Stack
 
 **Client:** REACTJS, JAVASCRIPT
 
@@ -38,6 +39,7 @@ Install dependencies
   npm i
    OR 
   cd emailDB-server
+  npm i
 
 ```
 
