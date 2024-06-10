@@ -13,9 +13,12 @@ const LoadingDisplay = () => {
                             <th scope="col">S.No</th>
                             <th scope="col">Company</th>
                             <th scope="col">Type</th>
+                            <th scope="col">Location</th>
                             <th scope="col">Email 1</th>
                             <th scope="col">Email 2</th>
                             <th scope="col">Email 3</th>
+                            <th scope="col">Mobile 1</th>
+                            <th scope="col">Mobile 2</th>
                             <th scope="col">Career</th>
                         </tr>
                     </thead>
@@ -25,6 +28,9 @@ const LoadingDisplay = () => {
                             emails.map((index) => (
                                 <tr key={index}>
                                     <th scope="row"><Skeleton height={20} /> </th>
+                                    <td><Skeleton height={20} /></td>
+                                    <td><Skeleton height={20} /></td>
+                                    <td><Skeleton height={20} /></td>
                                     <td><Skeleton height={20} /></td>
                                     <td><Skeleton height={20} /></td>
                                     <td><Skeleton height={20} /></td>
