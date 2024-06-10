@@ -4,6 +4,7 @@ const SERVER_URL = require('../config');
 
 const AddEmail = () => {
     const [companyName, setCompanyName] = useState("");
+    const [companyLocation, setCompanyLocation] = useState("");
     const [companyType, setCompanyType] = useState("");
     const [firstEmail, setFirstEmail] = useState("");
     const [secondEmail, setSecondEmail] = useState("");
@@ -18,6 +19,7 @@ const AddEmail = () => {
             const data = {
                 companyName,
                 companyType,
+                companyLocation,
                 firstEmail,
                 secondEmail,
                 thirdEmail,
@@ -40,6 +42,7 @@ const AddEmail = () => {
                 setLoadingInfo("Add Email");
                 setCompanyName("");
                 setCompanyType("");
+                setCompanyLocation("");
                 setFirstEmail("");
                 setSecondEmail("");
                 setThirdEmail("");
@@ -64,7 +67,11 @@ const AddEmail = () => {
                     <input type="text" value={companyName} onChange={ev => {setCompanyName(ev.target.value)}} className="form-control my-2" id="companyname" placeholder="Amazon" required />
                 </div>
                 <div className="mb-3">
-                    <select className="form-select" value={companyType} onChange={ev => {setCompanyType(ev.target.value)}} aria-label="Default select example" required>
+                    <label htmlFor="companylocation" className="form-label">Location</label>
+                    <input type="text" value={companyLocation} onChange={ev => {setCompanyLocation(ev.target.value)}} className="form-control my-2" id="companylocation" placeholder="Sikkim" />
+                </div>
+                <div className="mb-3">
+                    <select className="form-select" value={companyType} onChange={ev => {setCompanyType(ev.target.value)}} aria-label="Select company type" required>
                         <option value="">Select Company Type</option>
                         <option value="Large">Large Company</option>
                         <option value="Medium">Medium Company</option>
