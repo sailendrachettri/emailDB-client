@@ -41,8 +41,8 @@ const Display = () => {
                     <tr>
                         <th scope="col">S.No</th>
                         <th scope="col">Company</th>
-                        <th scope="col">Location</th>
                         <th scope="col">Type</th>
+                        <th scope="col">Location</th>
                         <th scope="col">Email 1</th>
                         <th scope="col">Email 2</th>
                         <th scope="col">Email 3</th>
