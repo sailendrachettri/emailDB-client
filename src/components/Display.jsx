@@ -46,6 +46,8 @@ const Display = () => {
                         <th scope="col">Email 1</th>
                         <th scope="col">Email 2</th>
                         <th scope="col">Email 3</th>
+                        <th scope="col">Mobile 1</th>
+                        <th scope="col">Mobile 2</th>
                         <th scope="col">Career</th>
                     </tr>
                 </thead>
@@ -59,9 +61,11 @@ const Display = () => {
                                 <td>{(data.companyType) ? (data.companyType) : "none"}</td>
                                 <td>{(data.companyLocation) ? (data.companyLocation) : "none"}</td>
                                 <td>{(data.firstEmail) ? <Link to={`mailto:${data.firstEmail}`} target='_blank'>Email 1</Link> : "none"}</td>
-                                <td>{(data.secondEmail) ? <Link to={`mailto:${data.secondEmail}`} target='_blank'>Email 2</Link> : "none"}</td>
+                                <td>{(data.secondEmail) ? <Link to={`mailto:${data.secondEmail}`} target='_blank' className='text-success'>Email 2</Link> : "none"}</td>
                                 <td>{(data.thirdEmail) ? <Link to={`mailto:${data.thirdEmail}`} target='_blank'>Email 3</Link> : "none"}</td>
-                                <td>{(data.careerPage) ? <Link to={data.careerPage} target='_blank'>Visit</Link> : "none"}</td>
+                                <td>{(data.mobile1) ? <Link to={`tel:${data.mobile1}`} className='text-success'>Call Now</Link> : "none"}</td>
+                                <td>{(data.mobile2) ? <Link to={`tel:${data.mobile2}`}>Call Now</Link> : "none"}</td>
+                                <td>{(data.careerPage) ? <Link to={data.careerPage} target='_blank' className='text-success'>Visit</Link> : "none"}</td>
                             </tr>
                         ))
                     }

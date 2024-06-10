@@ -11,6 +11,8 @@ const AddEmail = () => {
     const [thirdEmail, setThirdEmail] = useState("");
     const [careerPage, setCareerPage] = useState("");
     const [lodingInfo, setLoadingInfo] = useState("Add Email");
+    const [mobile1, setMobile1] = useState("");
+    const [mobile2, setMobile2] = useState("");
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -23,8 +25,12 @@ const AddEmail = () => {
                 firstEmail,
                 secondEmail,
                 thirdEmail,
+                mobile1,
+                mobile2,
                 careerPage
             };
+
+            console.log(data);
 
             const response = await fetch(`${SERVER_URL.SERVER_URI}/api/post/email/add`, {
                 method: 'POST',
@@ -46,8 +52,9 @@ const AddEmail = () => {
                 setFirstEmail("");
                 setSecondEmail("");
                 setThirdEmail("");
-                setCareerPage("");
-                
+                setMobile1("");
+                setMobile2("");
+                setCareerPage("");                
             }else{
                 toast.error(result.message);
                 setLoadingInfo("Add Email");
@@ -92,10 +99,17 @@ const AddEmail = () => {
                     <input type="email" value={thirdEmail} onChange={ev => {setThirdEmail(ev.target.value)}} className="form-control my-2" id="email3" placeholder="three@mail.com" />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="" className="form-label">Carrer</label>
-                    <input type="text" className="form-control my-2" value={careerPage} onChange={ev => {setCareerPage(ev.target.value)}} placeholder="carrer.example.com" />
+                    <label htmlFor="mobile1" className="form-label">Mobile 1</label>
+                    <input type="number" className="form-control my-2" id='mobile1' value={mobile1} onChange={ev => {setMobile1(ev.target.value)}} placeholder="+91 783 7842 901" />
                 </div>
-
+                <div className="mb-3">
+                    <label htmlFor="mobile2" className="form-label">Mobile 2</label>
+                    <input type="number" className="form-control my-2" id='mobile2' value={mobile2} onChange={ev => {setMobile2(ev.target.value)}} placeholder="+91 800 7242 121" />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="carrerpage" className="form-label">Carrer</label>
+                    <input type="text" className="form-control my-2" id='carrerpage' value={careerPage} onChange={ev => {setCareerPage(ev.target.value)}} placeholder="carrer.example.com" />
+                </div>
                 <button className='btn btn-primary' type='submit' onClick={()=> {setLoadingInfo("Please Wait...")}}>{lodingInfo}</button>
             </form>
         </div>
